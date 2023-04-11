@@ -1,0 +1,29 @@
+Username: ethan.valenzuela
+
+google.com
+
+URL: https://sso.prodigygame.com/premises?rid=4f27c8a9-8523-4939-bf51-95f6e665b8bc
+URL: https://math.prodigygame.com/?launcher=true&code=b154b2ee22d66
+URL: https://docs.google.com/document/u/0/?tgif=d
+URL: https://sso.prodigygame.com/game/login?_gl=1%2Arlvvaq%2A_ga%2AMjExMzcxMjQ1My4xNjYwNjY0NjA0%2A_ga_MXZJXY3K57%2AMTY3NjA1MjU2Mi40NC4xLjE2NzYwNTMyMDkuMC4wLjA.&rid=4f27c8a9-8523-4939-bf51-95f6e665b8bc
+URL: https://math.prodigygame.com/?launcher=true&code=04ec9f42d03dc
+URL: https://play.prodigygame.com/launcher?code=FJvw6kwvp48B2-sz1vsnGsuCIpaCZEZtjvQ0tGu7AW8&state=2f5e193b4bd940a98f490825c8b8f197
+URL: https://www.prodigygame.com/main-en/
+URL: https://sso.prodigygame.com/game/login?_gl=1%2A1av923w%2A_ga%2AMjExMzcxMjQ1My4xNjYwNjY0NjA0%2A_ga_MXZJXY3K57%2AMTY3NjA1MjU2Mi40NC4wLjE2NzYwNTI1NjIuMC4wLjA.&rid=293ed79e-206b-4cd5-8703-653a0ef44e11
+URL: https://docs.google.com/document/u/0/create?usp=docs_home&ths=true
+URL: https://login.i-ready.com/login?redirect_url=%2Fstudent%2Fdashboard%2Fhome
+URL: https://play.prodigygame.com/
+URL: https://play.prodigygame.com/launcher?code=enhFQDsR8uUNyd0NcT07zGPlr87m6qPaPuyE1bbmJD4&state=31df2e68d5884619af1b98a3cea1766f
+URL: https://sso.prodigygame.com/premises
+URL: https://www.prodigygame.com/
+URL: https://sso.prodigygame.com/premises?rid=98719606-34dd-4eff-b149-27b8d5f09f96
+URL: https://math.prodigygame.com/?launcher=true&code=f32581390f0f7
+URL: https://math.prodigygame.com/?launcher=true&code=a4d64e50451d9
+URL: https://www.getepic.com/app/profile-select?fromKidsClassCode=true
+URL: https://docs.google.com/document/u/0/d/1IpjsuVn38BFgQdshi3vGA3Aaa2aXuMJY5HrDVDMcwXg/edit?ntd=1&usp=docs_home&ths=true
+URL: https://sso.prodigygame.com/premises?rid=293ed79e-206b-4cd5-8703-653a0ef44e11
+URL: https://sso.prodigygame.com/game/login?rid=98719606-34dd-4eff-b149-27b8d5f09f96
+URL: https://kids.getepic.com/
+URL: https://play.prodigygame.com/launcher?code=T1vkT218ruO2YyHgP6L5Vl8HMDzZBkU-XNAvFa3c3MQ&state=2e61895ba0674a77965ac8fdc47e3e6a
+URL: https://play.prodigygame.com/launcher?launcher=true&code=mHCovLm9Vb87YqtcVc9xXS-xkulwzPSdalGgAXeZlnM&state=abe31e23184944389dc1a29bfbb1327e
+URL: https://login.i-ready.com/student/dashboard/home

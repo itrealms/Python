@@ -1,0 +1,19 @@
+Username: helena.edwards
+
+google.com
+slopegame.online
+
+URL: https://sso.prodigygame.com/game/login?rid=06b0f4b2-5db6-40d6-8f7f-6fc722127098
+URL: https://sso.prodigygame.com/game/login?rid=9f3fe5d6-aec7-4010-a3ca-a0d1d8c0b80e
+URL: chrome://newtab/
+URL: https://www.google.com/search?gs_ssp=eJzj4tVP1zc0LEoxTTe0NI43YPTiyUhNzMnMS1coKi3OAAB7GAju&q=healing+rush&rlz=1CAOUAQ_enUS1031&oq=heling&aqs=chrome.3.69i57j46i175i199i512j0i10i433i512j46i10i512j0i10i512l2j0i10i433i512l2j46i512j0i512.5043j0j7&sourceid=chrome&ie=UTF-8&safe=active&ssui=on
+URL: https://accounts.google.com/o/oauth2/auth/oauthchooseaccount?access_type=offline&client_id=523759519115-63c0h2vhev83mq90pq4c746ncnnpeh1o.apps.googleusercontent.com&prompt=select_account&redirect_uri=https%3A%2F%2Fsso.prodigygame.com%2Fauth%2Fgoogle%2Fcallback&response_type=code&scope=email%20profile&state=556d1a59b1cfc4c1092df70adf4cb3bd97dfecacc30996e2&service=lso&o2v=1&flowName=GeneralOAuthFlow
+URL: https://sso.prodigygame.com/signup/google?rid=9f3fe5d6-aec7-4010-a3ca-a0d1d8c0b80e
+URL: https://sso.prodigygame.com/premises?rid=9f3fe5d6-aec7-4010-a3ca-a0d1d8c0b80e
+URL: https://sso.prodigygame.com/premises?rid=06b0f4b2-5db6-40d6-8f7f-6fc722127098
+URL: https://math.prodigygame.com/?launcher=true&code=b93d7a45edf37
+URL: https://play.prodigygame.com/launcher?code=tRRIDmXYe_pt-soXLIrGTMAkUJVG7S5Zm_VMaLq9ziI&state=f5f78c84ab2a4acebcef5b83cbf41d3e
+URL: https://slopegame.online/healing-rush
+URL: https://play.prodigygame.com/
+URL: https://play.prodigygame.com/launcher?code=HhbTqjYcUGkz8WvAI5Us4BK9hzHrx2T0DIcf0v8NRxw&state=bcb68c7eadc3438f8f3a80ad363afb95
+URL: https://www.prodigygame.com/main-en/

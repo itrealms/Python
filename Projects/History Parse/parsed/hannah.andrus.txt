@@ -1,0 +1,11 @@
+Username: hannah.andrus
+
+google.com
+
+URL: https://ridgecrest.rosettastoneclassroom.com/en-US
+URL: chrome://newtab/
+URL: https://login.i-ready.com/
+URL: https://www.google.com/search?q=is+it+true+that+the+fbi+is+watching+me&rlz=1CAOUAQ_enUS1021&oq=is+it+true+that+the+fbi+&aqs=chrome.0.0i512j69i57j0i512l2j0i22i30l3j0i390l3.23626j1j7&sourceid=chrome&ie=UTF-8&safe=active&ssui=on
+URL: https://login.i-ready.com/login?redirect_url=%2Fstudent%2Fdashboard%2Fhome
+URL: https://totale.rosettastone.com/home
+URL: https://login.i-ready.com/student/dashboard/home

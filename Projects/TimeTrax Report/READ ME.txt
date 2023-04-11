@@ -1,0 +1,14 @@
+Welcome to Missed Punched Reporter:
+
+
+Export punch data from TimeTrax as file type "text" ".csv"
+
+Put exported data in the "Put_TimeTrax_Exports_Here" folder
+  You can put as many reports in here as you want to check
+
+Double click "Check_Report_3"
+
+Individual reports by date will be outputted into the "Reports" folder
+  Do not delete reports from here to keep accurate ongoing offense counts
+
+Sorted offense count report updated each time program is run with additional data as file "Count_Report.csv"

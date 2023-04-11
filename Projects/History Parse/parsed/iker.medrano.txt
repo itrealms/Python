@@ -1,0 +1,12 @@
+Username: iker.medrano
+
+
+URL: https://play.prodigygame.com/
+URL: https://sso.prodigygame.com/premises?rid=9fe706ff-cd6e-4ce2-b04a-c733a0d023f1
+URL: https://www.prodigygame.com/
+URL: https://login.i-ready.com/login?redirect_url=%2Fstudent%2Fdashboard%2Fhome
+URL: https://english.prodigygame.com/?launcher=true&code=b4da570447169
+URL: https://sso.prodigygame.com/game/recent_logins/choose?rid=9fe706ff-cd6e-4ce2-b04a-c733a0d023f1
+URL: https://play.prodigygame.com/launcher?code=q2OnxvX-i0uh4yNNfv-UQUpSrVUncjAWufhDGxEtHz0&state=2a0a4c9213134abba9ed8990809c991d
+URL: chrome://newtab/
+URL: https://www.prodigygame.com/main-en/
