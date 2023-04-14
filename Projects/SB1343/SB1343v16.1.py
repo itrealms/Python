@@ -59,8 +59,7 @@ while True:
 			expected_conditions.presence_of_element_located((By.CSS_SELECTOR, '#next[aria-disabled="false"]'))
 		).click()
 		print('Certificate ready')
-		today = date.today().strftime("%Y-%m-%d")
-		chrome.get_screenshot_as_file(f'{user_name} - SB 1343v16 Sexual Harassment Prevention Training - {today}.png')
+		chrome.get_screenshot_as_file(f'{user_name} - SB 1343v16 Sexual Harassment Prevention Training - {date.today()}.png')
 		exit()
 	else:
 		action.click(next_button).perform()
