@@ -21,7 +21,8 @@ test_confirm_path = f'{xpath_base}/button'
 cert_path = f'{xpath_base}/button[3]'
 
 # Set up chrome driver
-options = Options().add_argument("start-maximized")
+options = Options()
+options.add_argument("start-maximized")
 chrome = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 action = ActionChains(chrome)
 
