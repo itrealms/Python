@@ -12,6 +12,7 @@ import os.path
 
 # Set user's name and elements path
 user_name = input('Name for the certificate?: ')
+muted = True
 cert_check = False
 cert_file = f'{user_name} - SB 1343v16 Sexual Harassment Prevention Training - {date.today()}.png'
 
@@ -22,7 +23,7 @@ cert_path = f'{xpath_base}/button[3]'
 
 # Set up chrome driver
 options = Options()
-options.add_argument("start-maximized")
+options.add_argument("start-fullscreen")
 chrome = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 action = ActionChains(chrome)
 
@@ -34,10 +35,11 @@ WebDriverWait(chrome, 300).until(
 	expected_conditions.element_to_be_clickable((By.ID, 'mobile-start-button'))
 ).click()
 
-# Toggle Mute
-WebDriverWait(chrome, 300).until(
-	expected_conditions.element_to_be_clickable((By.CSS_SELECTOR, 'button[aria-label="volume"]'))
-).click()
+# Toggle Mute?
+if muted:
+	WebDriverWait(chrome, 300).until(
+		expected_conditions.element_to_be_clickable((By.CSS_SELECTOR, 'button[aria-label="volume"]'))
+	).click()
 
 while True:
 	if len(chrome.find_elements(By.XPATH, test_true_path)) > 0:
