@@ -6,10 +6,7 @@ import os
 
 def clean_name(n):
 	n = n.strip()
-	n = re.sub(r"\s+", " ", n)
-	n = re.sub(r"-+", "-", n)
-	n = re.sub(r" - ", "-", n)
-	n = re.sub(r"-+", "-", n)
+	n = re.sub(r"[^a-zA-Z0-9'é]+", "-", n)
 	return n
 
 
