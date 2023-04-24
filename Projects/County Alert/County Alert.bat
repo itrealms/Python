@@ -1,3 +1,3 @@
 @echo off
-py "G:\My Drive\Python\Projects\County Alert\County Alert.py"
+py "County Alert.py"
 pause

@@ -1,6 +1,4 @@
 # Code here is always executed
-# from _imports.timer import timer
-# from _imports.debug import debug
 from rich.traceback import install
 
 install()
