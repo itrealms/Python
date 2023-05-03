@@ -13,5 +13,5 @@ if __name__ == '__main__':
 	hello_world()
 
 else:
-	# Code here executed when imported (As a module))
+	# Code here executed when imported (As a module)
 	pass

@@ -77,5 +77,5 @@ if __name__ == '__main__':
 	offense_count()
 
 else:
-	# Code here executed when imported (As a module))
+	# Code here executed when imported (As a module)
 	pass

@@ -14,5 +14,5 @@ if __name__ == '__main__':
 	check_date()
 
 else:
-	# Code here executed when imported (As a module))
+	# Code here executed when imported (As a module)
 	pass

@@ -14,5 +14,5 @@ if __name__ == '__main__':
 				new_bat.write(f'py "{file_path}"')
 
 else:
-	# Code here executed when imported (As a module))
+	# Code here executed when imported (As a module)
 	pass
