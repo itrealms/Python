@@ -9,73 +9,101 @@ if __name__ == '__main__':
 	import csv
 	import os
 	import os.path
+	import re
 
-	class_list = [file for file in glob.glob(f'./Classes/*.csv')]
-	for class_file in class_list:
-		os.remove(class_file)
+	classes = [file for file in glob.glob(f'./Classes/*.csv')]
+	for _ in classes:
+		os.remove(_)
 
-	file_list = [file for file in glob.glob(f'./*.csv')]
-	for file in file_list:
-		with open(file, 'r', newline='') as current_file:
-			sign_ups = csv.DictReader(current_file)
-			june_kids = dict()
-			june_count = 0
-			july_kids = dict()
-			july_count = 0
-			for row in sign_ups:
-				if "June" in row["Session"]:
-					june_kids.update({f'{row["Child Name"]}_{row["Class"].split("/")[0].strip()}': row})
-					june_count += 1
+	june_kids = dict()
+	july_kids = dict()
 
-				if "July" in row["Session"]:
-					july_kids.update({f'{row["Child Name"]}_{row["Class"].split("/")[0].strip()}': row})
-					july_count += 1
+	june_count = dict()
+	july_count = dict()
+	session_list = [file for file in glob.glob(f'./*.csv')]
+	for session in session_list:
+		with open(session, 'r', newline='') as file:
+			session_data = csv.DictReader(file)
+			for session_row in session_data:
+				class_name = session_row["Class"].split("/")[0].strip()
+				session_name = session_row["Session"].split("/")[0].strip()
+				child_name = session_row["Child Name"].strip()
 
-				if "Both" in row["Session"]:
-					june_kids.update({f'{row["Child Name"]}_{row["Class"].split("/")[0].strip()}': row})
-					june_count += 1
-					july_kids.update({f'{row["Child Name"]}_{row["Class"].split("/")[0].strip()}': row})
-					july_count += 1
+				june_count[class_name] = 0
+				july_count[class_name] = 0
 
-				class_name = row['Class'].split('/')[0].strip()
+				if "June" in session_name:
+					june_kids.update({f'{child_name}_{class_name}': session_row})
+
+				if "July" in session_name:
+					july_kids.update({f'{child_name}_{class_name}': session_row})
+
+				if "Both" in session_name:
+					june_kids.update({f'{child_name}_{class_name}': session_row})
+					july_kids.update({f'{child_name}_{class_name}': session_row})
+
 				if not os.path.isfile(f'./Classes/{class_name}.csv'):
 					with open(f'./Classes/{class_name}.csv', 'w', newline='') as class_file:
-						for _ in row:
+						for _ in session_row:
 							class_file.write(f'{_},')
 						class_file.write(f'\n')
 
-			for _ in june_kids.values():
-				with open(f'./Classes/{_["Class"].split("/")[0].strip()}.csv', 'a', newline='') as class_file:
-					class_file.write(f'{_["Timestamp"]},')
-					class_file.write(f'{_["Email Address"]},')
-					class_file.write(f'{_["Parent Name"]},')
-					class_file.write(f'{_["Phone Number"]},')
-					class_file.write(f'{_["Child Name"]},')
-					class_file.write(f'{_["Class"].split("/")[0].strip()},')
-					class_file.write(f'{_["Session"].split("/")[0].strip()},')
-					class_file.write(f'{_["Meals?"]}\n')
+	for sign_up in june_kids.values():
+		class_name = sign_up["Class"].split("/")[0].strip()
+		if class_name in june_count:
+			june_count[class_name] += 1
+		else:
+			june_count[class_name] = 1
 
-			class_list = [file for file in glob.glob(f'./Classes/*.csv')]
-			for class_file in class_list:
-				with open(class_file, 'a', newline='') as classes:
-					classes.write(f'Total: ,')
-					classes.write(f'{len(june_kids)},')
-					classes.write(f'\n')
-					classes.write(f'\n\n')
+	for sign_up in july_kids.values():
+		class_name = sign_up["Class"].split("/")[0].strip()
+		if class_name in july_count:
+			july_count[class_name] += 1
+		else:
+			july_count[class_name] = 1
 
-			for _ in july_kids.values():
-				with open(f'./Classes/{_["Class"].split("/")[0].strip()}.csv', 'a', newline='') as class_file:
-					class_file.write(f'{_["Timestamp"]},')
-					class_file.write(f'{_["Email Address"]},')
-					class_file.write(f'{_["Parent Name"]},')
-					class_file.write(f'{_["Phone Number"]},')
-					class_file.write(f'{_["Child Name"]},')
-					class_file.write(f'{_["Class"].split("/")[0].strip()},')
-					class_file.write(f'{_["Session"].split("/")[0].strip()},')
-					class_file.write(f'{_["Meals?"]}\n')
-					class_file.write(f'Total: ,')
-					class_file.write(f'{len(july_kids)},')
-					class_file.write(f'\n')
+	for sign_up in june_kids.values():
+		class_name = sign_up["Class"].split("/")[0].strip()
+		session_name = sign_up["Session"].split("/")[0].strip()
+		child_name = sign_up["Child Name"].strip()
+		with open(f'./Classes/{class_name}.csv', 'a', newline='') as class_file:
+			class_file.write(f'{sign_up["Timestamp"]},')
+			class_file.write(f'{sign_up["Email Address"]},')
+			class_file.write(f'{sign_up["Parent Name"]},')
+			class_file.write(f'{sign_up["Phone Number"]},')
+			class_file.write(f'{child_name},')
+			class_file.write(f'{class_name},')
+			class_file.write(f'{session_name},')
+			class_file.write(f'{sign_up["Meals?"]}\n')
+
+	class_list = [file for file in glob.glob(f'./Classes/*.csv')]
+	for class_file in class_list:
+		class_name = re.match(r'\.\/Classes\\(.+)\.csv',class_file )
+		with open(class_file, 'a', newline='') as classes:
+			classes.write(f'Total:,')
+			classes.write(f'{june_count[class_name[1]]}')
+			classes.write(f'\n\n')
+
+	for sign_up in july_kids.values():
+		class_name = sign_up["Class"].split("/")[0].strip()
+		session_name = sign_up["Session"].split("/")[0].strip()
+		child_name = sign_up["Child Name"].strip()
+		with open(f'./Classes/{class_name}.csv', 'a', newline='') as class_file:
+			class_file.write(f'{sign_up["Timestamp"]},')
+			class_file.write(f'{sign_up["Email Address"]},')
+			class_file.write(f'{sign_up["Parent Name"]},')
+			class_file.write(f'{sign_up["Phone Number"]},')
+			class_file.write(f'{child_name},')
+			class_file.write(f'{class_name},')
+			class_file.write(f'{session_name},')
+			class_file.write(f'{sign_up["Meals?"]}\n')
+
+	class_list = [file for file in glob.glob(f'./Classes/*.csv')]
+	for class_file in class_list:
+		class_name = re.match(r'\.\/Classes\\(.+)\.csv', class_file)
+		with open(class_file, 'a', newline='') as classes:
+			classes.write(f'Total:,')
+			classes.write(f'{july_count[class_name[1]]}')
 
 else:
 	# Code here executed when imported (As a module)
