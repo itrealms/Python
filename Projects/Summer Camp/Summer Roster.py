@@ -74,7 +74,8 @@ if __name__ == '__main__':
 			class_file.write(f'{child_name},')
 			class_file.write(f'{class_name},')
 			class_file.write(f'{session_name},')
-			class_file.write(f'{sign_up["Meals?"]}\n')
+			class_file.write(f'{sign_up["Meals?"]},')
+			class_file.write(f'{sign_up["Age"]}\n')
 
 	class_list = [file for file in glob.glob(f'./Classes/*.csv')]
 	for class_file in class_list:
@@ -96,7 +97,8 @@ if __name__ == '__main__':
 			class_file.write(f'{child_name},')
 			class_file.write(f'{class_name},')
 			class_file.write(f'{session_name},')
-			class_file.write(f'{sign_up["Meals?"]}\n')
+			class_file.write(f'{sign_up["Meals?"]},')
+			class_file.write(f'{sign_up["Age"]}\n')
 
 	class_list = [file for file in glob.glob(f'./Classes/*.csv')]
 	for class_file in class_list:
