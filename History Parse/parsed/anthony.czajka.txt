@@ -1,0 +1,9 @@
+Username: anthony.czajka
+
+mit.edu
+
+URL: chrome://new-tab-page/
+URL: chrome://newtab/
+URL: https://login.i-ready.com/
+URL: https://scratch.mit.edu/projects/500827873/
+URL: https://www.getepic.com/app/read/39099

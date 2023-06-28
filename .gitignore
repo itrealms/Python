@@ -131,4 +131,4 @@ dmypy.json
 # User set
 /.idea/
 /Django/
-/Projects/PassGen/passwords.txt
+/PassGen/passwords.txt

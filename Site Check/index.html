@@ -1,0 +1,114 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap">
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $("#resp0").load("resp0.html");
+    $("#resp1").load("resp1.html");
+  });
+</script>
+
+<style>
+  /* ========== Fonts/Sizes ========== */
+  body,
+  .normal {
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 14pt;
+  }
+
+  .title {
+    font-family: Oswald;
+    font-weight: 600;
+    font-size: 36pt;
+  }
+
+  .head {
+    font-family: Oswald;
+    font-weight: 600;
+    font-size: 18pt;
+  }
+
+  .subhead {
+    font-family: Oswald;
+    font-weight: 600;
+    font-size: 14pt;
+  }
+
+  .small {
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 10pt;
+  }
+
+  /* ========== Colors ========== */
+  .dblue {
+    background-color: #293d4c;
+  }
+
+  .blue {
+    background-color: #386280;
+  }
+
+  .gray {
+    background-color: #dddedf;
+  }
+
+  a {
+    color: #3c78d8;
+  }
+
+  /* ========== Adjustments ========== */
+  .board {
+    font-family: Roboto;
+    font-size: 11pt;
+  }
+
+  .eotm {
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 36pt;
+  }
+
+  .justify {
+    text-align: justify;
+  }
+
+  .flex {
+    display: flex;
+  }
+
+  .flex>div {
+    flex: 1;
+    margin-left: 25px;
+  }
+
+  .flex>div:first-child {
+    margin-left: 0px;
+  }
+
+  table tr:nth-child(even) {
+    background-color: #dddedf;
+  }
+  /*
+  td {
+    width: 25%;
+  }
+  */
+</style>
+
+<div class="w3-container w3-padding">
+  <div class="w3-card-4 w3-white">
+
+    <div class="dblue head w3-text-white w3-padding">MISC Site Status</div>
+    <table id="resp0" class="w3-table w3-border"></table>
+
+    <div class="dblue head w3-text-white w3-padding">REALMS Site & Redirect Status</div>
+    <table id="resp1" class="w3-table w3-border"></table>
+
+  </div>
+</div>
