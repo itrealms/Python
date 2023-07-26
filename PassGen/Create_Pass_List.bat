@@ -1,3 +1,3 @@
 @echo off
-py "G:\My Drive\Python\Projects\PassGen\Create_Pass_List.py"
+py "G:\My Drive\_Coding\Python\PassGen\Create_Pass_List.py"
 pause
