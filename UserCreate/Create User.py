@@ -84,7 +84,6 @@ while True:
 		copier = '0000'
 
 	# Add entry to keepass
-	name = f'{first_name} {last_name}'
 	add_keepass(name, username, password, copier)
 
 	user_data = ",".join([time_stamp, grade, first_name, last_name, email, username, password, copier])
