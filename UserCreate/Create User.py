@@ -2,6 +2,20 @@ import datetime
 import random
 import re
 import os
+from pykeepass import PyKeePass
+
+
+def read_pass():
+	pass_path = 'C:/Users/jason.swing/IT/Scripts/REALMS_DB.pass'
+	with open(pass_path) as pass_file:
+		return pass_file.readline().rstrip()
+
+
+def add_keepass(ent_title, ent_username, ent_password, ent_notes):
+	kp = PyKeePass('I:/REALMS_DB.kdbx', password=read_pass())
+	group = kp.find_groups(name='Staff & Student Logins', first=True)
+	kp.add_entry(group, ent_title, ent_username, ent_password, notes=ent_notes)
+	kp.save()
 
 
 def clean_name(n):
@@ -68,6 +82,10 @@ while True:
 			cl.write(f'\n{copier}')
 	else:
 		copier = '0000'
+
+	# Add entry to keepass
+	name = f'{first_name} {last_name}'
+	add_keepass(name, username, password, copier)
 
 	user_data = ",".join([time_stamp, grade, first_name, last_name, email, username, password, copier])
 
