@@ -14,8 +14,20 @@ def read_pass():
 def add_keepass(ent_title, ent_username, ent_password, ent_notes):
 	kp = PyKeePass('I:/REALMS_DB.kdbx', password=read_pass())
 	group = kp.find_groups(name='Staff & Student Logins', first=True)
-	kp.add_entry(group, ent_title, ent_username, ent_password, notes=ent_notes)
-	kp.save()
+
+	if ent_notes == '0000':
+		ent_notes = ''
+
+	try:
+		kp.add_entry(group, ent_title, ent_username, ent_password, notes=ent_notes)
+	except Exception:
+		entry = kp.find_entries(title=ent_title, first=True)
+		ent_notes = entry.notes + f'\n{ent_notes}'
+		entry.username = ent_username
+		entry.password = ent_password
+		entry.notes = ent_notes
+	finally:
+		kp.save()
 
 
 def clean_name(n):

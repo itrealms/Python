@@ -7,20 +7,24 @@ if __name__ == '__main__':
 	# Code here executed when invoked directly (Not a module)
 	from pykeepass import PyKeePass
 
-	def read_pass():
-		pass_path = 'C:/Users/jason.swing/IT/Scripts/REALMS_DB.pass'
-		with open(pass_path) as pass_file:
-			return pass_file.readline().rstrip()
+	kp = PyKeePass('C:/Users/jason.swing/IT/Test_DB.kdbx', password='12345')
+	group = kp.find_groups(name='General', first=True)
 
 	title = 'test 01'
-	username = 'myusername'
-	password = 'mypass'
-	notes = '1234'
+	username = 'username'
+	password = 'password'
+	notes = 'notes 4'
 
-	kp = PyKeePass('I:/REALMS_DB.kdbx', password=read_pass())
-	group = kp.find_groups(name='Staff & Student Logins', first=True)
-	kp.add_entry(group, title, username, password, notes=notes)
-	kp.save()
+	try:
+		kp.add_entry(group, title, username, password, notes=notes)
+	except Exception as error:
+		entry = kp.find_entries(title=title, first=True)
+		notes = entry.notes + f'\n{notes}'
+		entry.username = username
+		entry.password = password
+		entry.notes = notes
+	finally:
+		kp.save()
 
 else:
 	# Code here executed when imported (As a module)
