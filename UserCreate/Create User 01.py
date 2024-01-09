@@ -1,18 +1,18 @@
 import datetime
 import random
 import re
-import os
 from pykeepass import PyKeePass
 
 
 def read_pass():
-	pass_path = 'C:/Users/jason.swing/IT/Scripts/REALMS_DB.pass'
-	with open(pass_path) as pass_file:
-		return pass_file.readline().rstrip()
+	if not (keepass := input('Password to open database: ')):
+		exit('Password required')
+	else:
+		return keepass
 
 
 def add_keepass(ent_title, ent_username, ent_password, ent_notes):
-	kp = PyKeePass('I:/REALMS_DB.kdbx', password=read_pass())
+	kp = PyKeePass('../REALMS_DB.kdbx', password=read_pass())
 	group = kp.find_groups(name='Staff & Student Logins', first=True)
 
 	if ent_notes == '0000':
@@ -56,10 +56,10 @@ def gen_pass():
 	return "".join([word1, word2, spec, num])
 
 
-with open('../PassGen/files/wordlist.txt') as wl:
+with open('./wordlist.txt') as wl:
 	word_list = [word.rstrip() for word in wl.readlines()]
 
-with open('C:/Users/jason.swing/IT/Scripts/Data Files/Add User.csv', "w") as au:
+with open('./Add User.csv', "w") as au:
 	au.write('Timestamp,Grade,First,Last,Email,Username,Password,Copier\n')
 
 while True:
@@ -86,39 +86,14 @@ while True:
 	password = gen_pass()
 
 	if grade not in str([-1, 0, 1, 2, 3, 4, 5, 6]):
-		with open('C:/Users/jason.swing/IT/Scripts/Data Files/copy_codes.txt') as cl:
-			copier_list = [code.rstrip() for code in cl.readlines()]
-
-		with open('C:/Users/jason.swing/IT/Scripts/Data Files/copy_codes.txt', "a") as cl:
-			while (copier := gen_copy_code()) in copier_list:
-				copier = gen_copy_code()
-			cl.write(f'\n{copier}')
+		copier = gen_copy_code()
 	else:
 		copier = '0000'
 
 	# Add entry to keepass
 	add_keepass(name, username, password, copier)
 
+	# Add user info to .csv for secondary script
 	user_data = ",".join([time_stamp, grade, first_name, last_name, email, username, password, copier])
-
-	with open('C:/Users/jason.swing/IT/Scripts/Data Files/Add User.csv', "a") as nu:
+	with open('./Add User.csv', "a") as nu:
 		nu.write(f'{user_data}\n')
-
-	with open('C:/Users/jason.swing/IT/Scripts/Data Files/User Creation Log.csv', "a") as nu:
-		nu.write(f'{user_data}\n')
-
-	with open(f'C:/Users/jason.swing/IT/Scripts/Data Files/Users/{username}.txt', "w") as nu:
-		nu.write(name)
-		nu.write(f'\n{email}')
-		nu.write(f'\n{password}')
-		nu.write(f'\n{copier}\n')
-
-		nu.write(f'\n{grade}\t{first_name}\t{last_name}\n')
-
-		nu.write(f'\nAdded: {name}\n')
-
-		nu.write(f'\nUsername: {username}')
-		nu.write(f'\nEmail: {email}')
-		nu.write(f'\nPassword: {password}')
-
-	os.system(f'start C:/Users/jason.swing/IT/Scripts/"Data Files"/Users/{username}.txt')
