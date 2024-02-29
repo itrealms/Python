@@ -132,3 +132,8 @@ dmypy.json
 /.idea/
 /Django/
 /PassGen/passwords.txt
+/Copier Counts/Access Control List - Copier Codes.csv
+/Copier Counts/pdeptid.csv
+/Copier Counts/Copy Counts.csv
+/Copier Counts/lounge.csv
+/Copier Counts/workroom.csv
