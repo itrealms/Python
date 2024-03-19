@@ -12,8 +12,8 @@ if __name__ == '__main__':
 	period_start = today - datetime.timedelta(days=today.weekday()+1, weeks=2)
 	period_end = today - datetime.timedelta(days=today.weekday()+2,)
 
-	file_name_old = 'Pay Checker - Google Sheets.pdf'
-	file_name_new = f'[Hours] - {period_start} - {period_end}.pdf'
+	file_name_old = 'C:/Users/jason.swing/Downloads/Pay Checker - Google Sheets.pdf'
+	file_name_new = f'C:/Users/jason.swing/Downloads/[Hours] - {period_start} - {period_end}.pdf'
 
 	try:
 		os.rename(file_name_old, file_name_new)
